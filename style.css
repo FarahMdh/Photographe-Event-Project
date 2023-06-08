@@ -1,0 +1,71 @@
+/*
+Theme Name: Photographe Event Project
+Author: Farah Meddahi
+Description: Un thème personnalisé pour le site de Nathalie Mota
+Version: 1.0
+Tags: photo, Photographe Event Project
+*/
+
+body {
+    background-color: #FFFFFF;
+}
+
+/* logo */
+.site-logo img{
+    width: 216px;
+    height: 14px;
+}
+
+.site-logo {
+    margin-right: 20px; 
+    margin-left: 16px;
+}
+
+
+/* barre de navigation header*/
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+  
+  
+.main-menu li {
+    margin-left: 50px;
+    
+}
+
+.main-menu {
+    display: flex;
+    list-style: none;
+    
+}
+
+a {
+    text-decoration: none;
+    font-style: none;
+    color: black;
+}
+
+/* footer */
+.site-footer {
+    padding: 10px; 
+    border-top: 1px solid black; 
+}
+
+
+.footer-navigation {
+    display: flex;
+    justify-content: center; 
+}
+
+.footer-menu {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+.footer-menu li {
+    margin: 0 40px; 
+}
