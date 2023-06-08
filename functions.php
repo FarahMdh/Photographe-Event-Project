@@ -12,4 +12,7 @@
         wp_enqueue_script( 'mota', get_stylesheet_directory_uri() .'/script.js', array(), '1.0.0', true );
         }
 
-        
+        function mota_setup() {
+            add_theme_support( 'post-thumbnails' );
+        }
+        add_action( 'after_setup_theme', 'mota_setup' );
