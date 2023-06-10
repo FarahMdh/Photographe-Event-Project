@@ -16,6 +16,16 @@ Tags: photo, Photographe Event Project
          url('fonts/Poppins/Poppins-Thin.ttf') format('truetype');
     font-weight: thin;
     font-style: normal;
+}
+
+@font-face {
+    font-family: 'Poppins';
+    src: url('fonts/Poppins/Poppins-Regular.eot') format('embedded-opentype'),
+         url('fonts/Poppins/Poppins-Regular.woff2') format('woff2'),
+         url('fonts/Poppins/Poppins-Regular.woff') format('woff'),
+         url('fonts/Poppins/Poppins-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
 
 }
 
@@ -168,6 +178,8 @@ a {
     width: 95%;
     max-width: 500px;
     min-width: 300px;
+    height: 600px;
+    border: 3px solid black;
     padding: 30px;
     background: #fff;
     border-radius: 5px;
@@ -202,4 +214,32 @@ a {
     font-family: 'Space_Mono';
     font-weight: 500;
     font-style: italic;
-  }
+}
+
+
+/* style du formulaire de contact */
+#wpcf7-f56-o1 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#wpcf7-f56-o1 p {
+    font-family: 'Poppins';
+    font-size: 12px;
+    font-style: normal;
+}
+
+.wpcf7-form-control.wpcf7-text.wpcf7-validates-as-required {
+    border-radius: 7px;
+    height: 40px;
+    width: 263px;
+    border: 2px solid #B8BBC2;
+}
+
+.wpcf7-form-control.wpcf7-textarea {
+    border-radius: 7px;
+    height: 210px;
+    width: 263px;
+    border: 2px solid #B8BBC2;
+}
