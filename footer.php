@@ -1,3 +1,5 @@
+<?php get_template_part('contact-modal'); ?>
+
 <?php wp_footer(); ?>
 </body>
 </html>
