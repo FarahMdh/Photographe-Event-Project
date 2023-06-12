@@ -1,5 +1,4 @@
 <?php get_header(); ?>
-test
 <div class="single-post-container">
 
     <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
@@ -7,7 +6,7 @@ test
         <div class="post-content">
 
             <!-- Display the Title -->
-            <h1 class="post-title"><?php the_title(); ?></h1>
+            <h1 class="post-title line-break-title"><?php the_title(); ?></h1>        <!-- pour que les titres aillent à la ligne -->
 
             <!-- Display the Featured Image -->
             <?php if (has_post_thumbnail()) : ?>
@@ -20,6 +19,9 @@ test
             <div class="post-text">
                 <?php the_content(); ?>
             </div>
+
+            <!-- Display the Contact Button -->
+            <a class="contact-button" href="#">Contact</a>
 
         </div>
 

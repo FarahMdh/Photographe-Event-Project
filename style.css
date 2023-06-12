@@ -254,3 +254,43 @@ h1 img {
     font-family: 'Space_Mono';
     font-style: normal;
 }
+
+/* création du post CPT */
+.customize-support {
+    margin: 0;
+}
+
+.post-content {
+    margin-left: 50px;
+    margin-right: 50px;
+}
+
+.single-post-container {
+    background-color: #f6f6f6;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+.post-title {
+    font-family: 'Space_Mono';
+    font-style: italic; 
+    font-weight: 500;
+    text-transform: uppercase;
+    font-size: 66px;
+    top: 300px;
+    position: relative;
+}
+
+.line-break-title {
+    line-height: 0.8; 
+  }
+  
+
+.post-thumbnail img {
+    position: relative;
+    width: 457px;
+    height: 645px;
+    left: 782px;
+    top: -149px;
+}
