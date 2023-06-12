@@ -280,6 +280,7 @@ h1 img {
     font-size: 66px;
     top: 300px;
     position: relative;
+    margin-left: 150px;
 }
 
 .line-break-title {
@@ -293,4 +294,27 @@ h1 img {
     height: 645px;
     left: 782px;
     top: -149px;
+}
+
+.CTA {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
+    gap: 96px; 
+    margin-left: 78px;
+    margin-top: -177px;
+    margin-bottom: 60px;
+    padding: 30px;
+}
+
+.contact-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 272px;
+    height: 50px;
+    border-radius: 2px;
+    background-color: #D8D8D8;
 }
