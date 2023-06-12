@@ -178,9 +178,8 @@ a {
     width: 95%;
     max-width: 500px;
     min-width: 300px;
-    height: 600px;
-    border: 3px solid black;
-    padding: 30px;
+    height: 700px;
+    border: 5px solid black;
     background: #fff;
     border-radius: 5px;
     position: absolute;
@@ -209,11 +208,9 @@ a {
     color: #fff;
 }
 
-.modal h1 {
-    margin-bottom: 10px;
-    font-family: 'Space_Mono';
-    font-weight: 500;
-    font-style: italic;
+h1 img {
+    height: 84px;
+    width: 500px;
 }
 
 
@@ -224,8 +221,13 @@ a {
     justify-content: center;
 }
 
+.wpcf7-form.init {                     
+    padding-left: 50px;          /* pour centrer le formulaire */
+}
+
 #wpcf7-f56-o1 p {
     font-family: 'Poppins';
+    color: #313144;
     font-size: 12px;
     font-style: normal;
 }
@@ -242,4 +244,13 @@ a {
     height: 210px;
     width: 263px;
     border: 2px solid #B8BBC2;
+}
+
+.wpcf7-form-control.has-spinner.wpcf7-submit {
+    width: 270px;
+    height: 50px;
+    border: none;
+    padding: 0;
+    font-family: 'Space_Mono';
+    font-style: normal;
 }

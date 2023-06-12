@@ -3,8 +3,7 @@
   <div class="overlay modal-trigger"></div>
   
   <div class="modal">
-    <button class="close-modal modal-trigger">X</button>
-    <h1>CONTACTCONTACTCONTACT</h1>
+    <h1><img src="<?php echo esc_url(get_template_directory_uri()); ?>/images/contact.png" alt="Logo"></h1>
     <?php
 		echo do_shortcode('[contact-form-7 id="56" title="Modale de contact"]');
 	?>
@@ -12,5 +11,4 @@
 
 </div>
 
-<button class="modal-btn modal-trigger">Open</button>
 
