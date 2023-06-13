@@ -260,16 +260,29 @@ h1 img {
     margin: 0;
 }
 
-.post-content {
-    margin-left: 50px;
-    margin-right: 50px;
-}
-
 .single-post-container {
     background-color: #f6f6f6;
     margin: 0;
     padding: 0;
     overflow: hidden;
+}
+
+.post-content {
+    margin-left: 125px;
+    margin-right: 125px;
+    margin-top: 30px;
+}
+
+.first-section {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.title_ref {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
 }
 
 .post-title {
@@ -278,9 +291,6 @@ h1 img {
     font-weight: 500;
     text-transform: uppercase;
     font-size: 66px;
-    top: 300px;
-    position: relative;
-    margin-left: 150px;
 }
 
 .line-break-title {
@@ -289,11 +299,11 @@ h1 img {
   
 
 .post-thumbnail img {
-    position: relative;
+    object-fit: cover;
     width: 457px;
     height: 645px;
-    left: 782px;
-    top: -149px;
+
+
 }
 
 .CTA {
@@ -304,7 +314,6 @@ h1 img {
     border-bottom: 1px solid black;
     gap: 96px; 
     margin-left: 78px;
-    margin-top: -177px;
     margin-bottom: 60px;
     padding: 30px;
 }
@@ -318,3 +327,4 @@ h1 img {
     border-radius: 2px;
     background-color: #D8D8D8;
 }
+
