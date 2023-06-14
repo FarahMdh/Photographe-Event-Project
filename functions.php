@@ -8,8 +8,9 @@
     add_action( 'wp_enqueue_scripts', 'theme_enqueue_styles' );
     function theme_enqueue_styles() {
         //echo "test";
-        wp_enqueue_style( 'style', get_stylesheet_directory_uri() .'/style.css' );    
-        wp_enqueue_script( 'mota', get_stylesheet_directory_uri() .'/script.js', array(), '1.0.0', true );
+        wp_enqueue_style( 'style', get_stylesheet_directory_uri() .'/style.css' );   
+        wp_enqueue_script('jquery'); // Ajout de jQuery 
+        wp_enqueue_script( 'mota', get_stylesheet_directory_uri() .'/script.js', array('jquery'), '1.0.0', true );
         }
 
         function mota_setup() {

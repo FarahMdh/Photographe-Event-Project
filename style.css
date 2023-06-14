@@ -322,15 +322,14 @@ h1 img {
     display: flex;
     flex-direction: column;
     gap: 20px;
+    text-transform: uppercase;
 }
 
 .CTA {
     display: flex;
     flex-direction: row;
     align-items: center;
-    border-bottom: 1px solid black;
     gap: 96px; 
-    margin-bottom: 60px;
     padding: 30px 0 30px 0; 
 }
 
@@ -342,5 +341,31 @@ h1 img {
     height: 50px;
     border-radius: 2px;
     background-color: #D8D8D8;
+    transition: transform 0.3s ease;
 }
 
+.contact-button:hover {
+    background-color: #E00000;
+    font-weight: bold;
+    transform: scale(1.1);
+    color: white;
+}
+
+.contact-button.active {
+    transform: translate(10px, 10px);                   /* style au clic */
+}
+
+.second-section {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 60px;
+    border-bottom: 1px solid black;
+}
+
+.photo-navigation {
+    display: flex;
+    justify-content: flex-end;
+    gap: 30px;
+}

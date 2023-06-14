@@ -39,6 +39,7 @@
                         <?php
                         $terms = get_the_terms(get_the_ID(), 'format');
                         if ($terms && !is_wp_error($terms)) {
+                            echo 'Format : ';
                             foreach ($terms as $term) {
                                 echo $term->name . ' ';
                             }
@@ -77,11 +78,20 @@
                 </div>
 
                 
-                <!-- Display the Contact Button -->
+        <div class="second-section">
+
                 <div class="CTA">
                 <p>Cette photo vous intéresse ?</p>
                 <a class="contact-button" href="#">Contact</a>
                 </div>
+
+                <div class="photo-navigation">
+                    <img src="<?php echo get_stylesheet_directory_uri(); ?>/images/arrow-left.png" class="arrow" data-direction="previous" alt="Previous">
+                    <img src="<?php echo get_stylesheet_directory_uri(); ?>/images/arrow-right.png" class="arrow" data-direction="next" alt="Next">
+                </div>
+        </div>
+
+
 
     </div>
 
