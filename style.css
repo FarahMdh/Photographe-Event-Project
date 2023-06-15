@@ -294,7 +294,7 @@ h1 img {
 }
 
 .line-break-title {
-    line-height: 0.8; 
+    line-height: 0.9; 
   }
   
 
@@ -368,4 +368,8 @@ h1 img {
     display: flex;
     justify-content: flex-end;
     gap: 30px;
+}
+
+.number-ref {
+    text-transform: uppercase;               /* reference préremplie dans la modale */
 }

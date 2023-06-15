@@ -40,6 +40,24 @@ document.addEventListener("DOMContentLoaded", function() {
     });
   });
   
+// pour que le champs REF.PHOTO soit préremplie automatiquement dans la modale de contact 
+document.addEventListener('DOMContentLoaded', function() {
+  var contactButton = document.querySelector('.contact-button');
+  var modalRefField = document.querySelector('.number-ref');
+
+  if (contactButton && modalRefField) {
+    contactButton.addEventListener('click', function(event) {
+      event.preventDefault();
+      
+      var referenceElement = document.querySelector('.post-reference');
+      var reference = referenceElement ? referenceElement.textContent.trim().replace('Référence : ', '') : '';
+      
+      modalRefField.value = reference;
+      
+    });
+  }
+});
+
 
   
   
