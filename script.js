@@ -32,25 +32,25 @@ function toggleModal(event) {
 
 //pour que les titres de plusieurs mots aillent à la ligne 
 document.addEventListener("DOMContentLoaded", function() {
-    var lineBreakTitles = document.querySelectorAll(".line-break-title");
+    const lineBreakTitles = document.querySelectorAll(".line-break-title");
     
     lineBreakTitles.forEach(function(title) {
-      var words = title.textContent.split(" ");
+      const words = title.textContent.split(" ");
       title.innerHTML = words.join("<br>");
     });
   });
   
-// pour que le champs REF.PHOTO soit préremplie automatiquement dans la modale de contact 
+// pour que le champs REF.PHOTO soit prérempli automatiquement dans la modale de contact 
 document.addEventListener('DOMContentLoaded', function() {
-  var contactButton = document.querySelector('.contact-button');
-  var modalRefField = document.querySelector('.number-ref');
+  const contactButton = document.querySelector('.contact-button');
+  const modalRefField = document.querySelector('.number-ref');
 
   if (contactButton && modalRefField) {
     contactButton.addEventListener('click', function(event) {
       event.preventDefault();
       
-      var referenceElement = document.querySelector('.post-reference');
-      var reference = referenceElement ? referenceElement.textContent.trim().replace('Référence : ', '') : '';
+      const referenceElement = document.querySelector('.post-reference');
+      const reference = referenceElement ? referenceElement.textContent.trim().replace('Référence : ', '') : '';
       
       modalRefField.value = reference;
       

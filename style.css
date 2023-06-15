@@ -86,7 +86,8 @@ body {
 .container {
     display: flex;
     align-items: center;
-    justify-content: space-around;
+    justify-content: space-between;
+    margin: 0 125px;
 }
   
   
@@ -373,3 +374,37 @@ h1 img {
 .number-ref {
     text-transform: uppercase;               /* reference préremplie dans la modale */
 }
+
+.photo-navigation {
+    display: flex;
+    min-height: 150px;
+ } 
+
+.mini-thumbnail {
+display: none;
+width: 80px;
+height: 70px;
+}
+
+.photo-navigation a:hover + .mini-thumbnail{
+display: block;
+}
+
+.arrow-left-thumbnail, .arrow-right-thumbnail {
+    display: flex;
+    flex-direction: column-reverse;
+}
+
+.arrow-right-thumbnail {
+    align-items: flex-start;
+    min-width: 80px;
+}
+
+.arrow-left-thumbnail {
+    align-items: flex-end;
+    min-width: 80px;
+}
+
+
+
+
