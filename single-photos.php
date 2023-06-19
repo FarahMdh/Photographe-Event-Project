@@ -108,6 +108,17 @@
                 </div>
         </div>
 
+        <div class="third-section">
+            <p> VOUS AIMEREZ AUSSI </p>
+
+            <?php get_template_part('templates_parts/photo_block'); ?>
+
+            <div class="all-photos">
+                <a href="<?php echo esc_url(home_url('/')); ?>" class="all-photos-button">Toutes les photos</a>
+            </div>
+        
+        </div>
+
 
 
     </div>
