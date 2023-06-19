@@ -326,6 +326,17 @@ h1 img {
     text-transform: uppercase;
 }
 
+/* CTA + navigation des photos */
+
+.second-section {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 60px;
+    border-bottom: 1px solid black;
+}
+
 .CTA {
     display: flex;
     flex-direction: row;
@@ -356,15 +367,7 @@ h1 img {
     transform: translate(10px, 10px);                   /* style au clic */
 }
 
-.second-section {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
-    margin-bottom: 60px;
-    border-bottom: 1px solid black;
-}
-
+/* navigation des photos */
 .photo-navigation {
     display: flex;
     justify-content: flex-end;
@@ -378,7 +381,8 @@ h1 img {
 .photo-navigation {
     display: flex;
     min-height: 150px;
- } 
+} 
+
 
 .mini-thumbnail {
 display: none;

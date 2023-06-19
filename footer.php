@@ -1,4 +1,4 @@
-<?php get_template_part('contact-modal'); ?>
+<?php get_template_part('templates_parts/contact-modal'); ?>
 
 <?php wp_footer(); ?>
 </body>
