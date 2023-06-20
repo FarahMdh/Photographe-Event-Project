@@ -24,12 +24,13 @@ wp_reset_postdata();
     <h1><img src="<?php echo esc_url(get_template_directory_uri()); ?>/images/title.png" alt="title"></h1>
 </div>
 
+<div class="main-page">
 
 <div class="thumbnail-container">
     <?php
     $args = array(
         'post_type' => 'photos', 
-        'posts_per_page' => -1,                 // pour afficher toutes les photos
+        'posts_per_page' => 8,                 // pour afficher toutes les photos
     );
 
     $related_query = new WP_Query($args);
@@ -48,6 +49,14 @@ wp_reset_postdata();
         echo "Aucune photo trouvée.";
     endif;
     ?>
+
 </div>
+
+    <div class="load-more-btn">
+    <button id="load-more-btn">Charger plus</button>
+    </div>
+
+</div>
+    
 
 <?php get_footer(); ?>
