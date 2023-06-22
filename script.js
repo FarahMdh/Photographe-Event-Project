@@ -60,41 +60,6 @@ document.addEventListener('DOMContentLoaded', function() {
 
 // création du bouton charger plus 
 
-jQuery(document).ready(function($) {
-    var page = 1; // Page courante
-    var postsPerPage = 8; // Nombre de photos à afficher par page
-    var container = $('.thumbnail-container');
-    var loadMoreBtn = $('#load-more-btn');
-
-    loadMoreBtn.on('click', function() {
-        // Effectuer une nouvelle requête pour charger plus de photos
-        $.ajax({
-            url: '<?php echo get_site_url() . '/wp-json/custom-photos/v1/load-more/' ?>' + page,
-            type: 'GET',
-            beforeSend: function() {
-                loadMoreBtn.text('Chargement...'); // Changer le texte du bouton pendant le chargement
-            },
-            success: function(response) {
-                container.append(response); // Ajouter les nouvelles photos à la fin du conteneur
-
-                page++; // Augmenter le numéro de page
-
-                // Vérifier si toutes les photos ont été chargées
-                if (response === '') {
-                    loadMoreBtn.text('Aucune photo supplémentaire'); // Modifier le texte du bouton
-                    loadMoreBtn.prop('disabled', true); // Désactiver le bouton
-                } else {
-                    loadMoreBtn.text('Charger plus'); // Rétablir le texte du bouton
-                }
-            },
-            error: function() {
-                loadMoreBtn.text('Erreur lors du chargement'); // Afficher un message d'erreur
-            }
-        });
-    });
-});
-
-
 
 
 

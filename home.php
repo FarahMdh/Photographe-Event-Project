@@ -30,7 +30,7 @@ wp_reset_postdata();
     <?php
     $args = array(
         'post_type' => 'photos', 
-        'posts_per_page' => 8,                 // pour afficher toutes les photos
+        'posts_per_page' => 8,                 
     );
 
     $related_query = new WP_Query($args);
@@ -38,11 +38,10 @@ wp_reset_postdata();
     if ($related_query->have_posts()) :
         while ($related_query->have_posts()) :
             $related_query->the_post();
-    ?>
-            <div class="thumbnail">
-                <?php the_post_thumbnail("medium"); ?>
-            </div>
-    <?php
+    
+            get_template_part("templates_parts/photo_block");
+
+    
         endwhile;
         wp_reset_postdata();
     else :

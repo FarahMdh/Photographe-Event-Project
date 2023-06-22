@@ -467,6 +467,8 @@ a {
         z-index: 1;
 }
 
+/* bouton de chargement de la page d'accueil*/
+
 .load-more-btn {
     display: flex;
     align-items: center;
@@ -486,7 +488,7 @@ a {
 }
 
 #load-more-btn:hover {
-    background-color: #E00000;
+    background-color:black;
     font-weight: bold;
     transform: scale(1.1);
     color: white;
