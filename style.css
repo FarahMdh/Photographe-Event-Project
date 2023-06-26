@@ -493,3 +493,42 @@ a {
     transform: scale(1.1);
     color: white;
 }
+
+/* style des filtres */
+.filters-photos {
+    display: flex;
+    justify-content: space-between;
+    margin: 40px 140px;
+}
+
+.filters select {
+    width: 260px;
+    height: 43px;
+    border-radius: 8px;
+    border-color: grey;
+    font-family: 'Poppins';
+    text-transform: uppercase;
+    cursor: pointer;
+}
+
+#sort-by {
+    width: 260px;
+    height: 43px;
+    border-radius: 8px;
+    border-color: grey;
+    font-family: 'Poppins';
+    text-transform: uppercase;
+    cursor: pointer;
+}
+
+.filters select:hover {
+    border-color: #215AFF;
+}
+
+#sort-by:hover{
+    border-color: #215AFF;
+}
+
+#photo-category-select option:hover {
+    background-color: #E00000;
+}
