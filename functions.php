@@ -28,7 +28,7 @@
     }
     add_action( 'after_setup_theme', 'mota_setup' );
 
-    
+
 
     function mota_rest_api_init() {
         register_rest_route( 'mota-custom/v1', '/photo', array(
@@ -64,7 +64,7 @@
     
     function mota_rest_api_photo_handler( $request ) {    
         $args = array(
-            'post_type' => 'photo',
+            'post_type' => 'photos',
             'paged' => $request['page'],
             'posts_per_page' => get_option('posts_per_page'),
             'orderby' => 'date',
@@ -75,7 +75,7 @@
         
         if ( ! empty( $request['photo_categories'] ) ) {
             $tax_query[] = array(
-                'taxonomy' => 'photo-categories',
+                'taxonomy' => 'categorie',
                 'field'    => 'slug',
                 'terms'    => $request['photo_categories'],
             );
@@ -83,7 +83,7 @@
         
         if ( ! empty( $request['formats'] ) ) {
             $tax_query[] = array(
-                'taxonomy' => 'formats',
+                'taxonomy' => 'format',
                 'field'    => 'slug',
                 'terms'    => $request['formats'],
             );
@@ -100,12 +100,16 @@
         if ( $query->have_posts() ) {
             while ( $query->have_posts() ) {
                 $query->the_post();
-                get_template_part( 'template_parts/photo_block' );
+                get_template_part( 'templates_parts/photo_block' );
             }
         }
-        
         $output = ob_get_contents();
         ob_end_clean();
+
+        $args['paged'] = $request['page'] + 1;
+        $query = new WP_Query( $args );
+        $post_next_page = $query->have_posts(); 
+
     
-        return new WP_REST_Response( array('html' => $output), 200 );
+        return new WP_REST_Response( array('html' => $output, 'post_next_page'=>$post_next_page), 200 );
     }

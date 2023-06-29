@@ -529,6 +529,6 @@ a {
     border-color: #215AFF;
 }
 
-#photo-category-select option:hover {
+.red-background {
     background-color: #E00000;
 }
