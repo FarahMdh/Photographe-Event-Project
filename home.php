@@ -47,16 +47,17 @@ $query = new WP_Query( $args );
         ) );
     ?>
     
-    <?php if ( ! empty( $photo_categories ) && ! is_wp_error( $photo_categories ) ) : ?>
+    <?php if (!empty($photo_categories) && !is_wp_error($photo_categories)) : ?>
         <select name="photo-category" id="photo-category-select">
-            <option value="">Catégories</option>
+            <option value="" disabled selected>Catégories</option>
 
-            <?php foreach ( $photo_categories as $category ) : ?>
-                <option value="<?php echo esc_attr( $category->slug ); ?>">
-                    <?php echo esc_html( $category->name ); ?>
+            <?php foreach ($photo_categories as $category) : ?>
+            <?php if ($category->slug !== 'categories') : ?>
+                <option value="<?php echo esc_attr($category->slug); ?>">
+                    <?php echo esc_html($category->name); ?>
                 </option>
+            <?php endif; ?>
             <?php endforeach; ?>
-
         </select>
     <?php endif; ?>
 
@@ -68,28 +69,32 @@ $query = new WP_Query( $args );
         ) );
     ?>
 
-    <?php if ( ! empty( $formats ) && ! is_wp_error( $formats ) ) : ?>
+    <?php if (!empty($formats) && !is_wp_error($formats)) : ?>
         <select name="format" id="format-select">
-            <option value="">Formats</option>
+            <option value="" disabled selected>Formats</option>
 
-            <?php foreach ( $formats as $format ) : ?>
-                <option value="<?php echo esc_attr( $format->slug ); ?>">
-                    <?php echo esc_html( $format->name ); ?>
+            <?php foreach ($formats as $format) : ?>
+            <?php if ($format->slug !== 'formats') : ?>
+                <option value="<?php echo esc_attr($format->slug); ?>">
+                    <?php echo esc_html($format->name); ?>
                 </option>
+            <?php endif; ?>
             <?php endforeach; ?>
         </select>
     <?php endif; ?>
+
                 
             </div>
 
 
     <div class="sort-by-container">
         <select id="sort-by" name="sort-by">
-            <option value="">Trier par</option>
+            <option value="" disabled selected>Trier par</option>
             <option value="DESC">Plus récent</option>
             <option value="ASC">Plus ancien</option>
         </select>
     </div>
+
 
     </div>
 
@@ -108,7 +113,6 @@ $query = new WP_Query( $args );
 
 </div>
 
-
     <div class="load-more-btn">
     <button id="load-more-btn">Charger plus</button>
     </div>
@@ -117,3 +121,4 @@ $query = new WP_Query( $args );
     
 
 <?php get_footer(); ?> 
+

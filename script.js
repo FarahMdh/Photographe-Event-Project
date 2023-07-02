@@ -59,3 +59,19 @@ function toggleModal(event) {
   }
 });
 
+// LIGHTBOX 
+// class Lightbox {
+//     static init () {
+//       const links = document.querySelectorAll('.thumbnail')
+//         .forEach(links => links.addEventListener('click', e => {
+//           e.preventDefault()
+//           new Lightbox(e.currentTarget.getAttribute('thumbnail'))
+//         }) )
+//     }
+
+//   constructor(url) {
+//     const element = this 
+//   }
+// }
+
+// Lightbox.init ()

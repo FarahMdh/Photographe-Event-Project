@@ -83,17 +83,6 @@ jQuery(document).ready(function($) {
   }
 });
 
-// pour que le background des filtres deviennent rouge au survol 
-$(document).ready(function() {
-  $('#photo-category-select option').hover(
-    function() {
-      $(this).addClass('red-background');
-    },
-    function() {
-      $(this).removeClass('red-background');
-    }
-  );
-});
 
 
 
