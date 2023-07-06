@@ -111,7 +111,39 @@
         <div class="third-section">
             <p> VOUS AIMEREZ AUSSI </p>
 
-            <?php get_template_part('templates_parts/photo_block'); ?>
+            <div class="double-photos">
+
+            <?php
+                $terms = get_the_terms(get_the_ID(), 'categorie');
+                $first_category = $terms[0]->slug;
+
+
+                $args = array(
+                    'post_type' => 'photos',
+                    'post__not_in' => array(get_the_ID()),
+                    'posts_per_page' => 2,
+                    'tax_query' => array(
+                        array(
+                            'taxonomy' => 'categorie',
+                            'field'    => 'slug',
+                            'terms'    => $first_category,
+                        ),
+                    ),
+                );
+
+
+                $query = new WP_Query( $args );
+                global $query_lightbox ;
+                $query_lightbox = $query;
+            ?>
+
+
+            <?php while($query->have_posts()) : ?>
+                <?php $query->the_post(); ?>
+               
+                <?php get_template_part('templates_parts/photo_block' ); ?>
+            <?php endwhile; ?>
+            </div>
 
             <div class="all-photos">
                 <a href="<?php echo esc_url(home_url('/')); ?>" class="all-photos-button">Toutes les photos</a>

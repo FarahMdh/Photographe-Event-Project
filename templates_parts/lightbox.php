@@ -1,24 +1,23 @@
-<?php
-// Exemple de requête pour récupérer les photos
-$args = array(
-  'post_type' => 'photos', // Remplacez 'photo' par le type de post approprié
-  'posts_per_page' => 1, // Récupère tous les articles, vous pouvez modifier le nombre si nécessaire
-);
+<?php global $query_lightbox; ?>
 
-$query = new WP_Query($args);
-?>
 
+<?php if (isset($query_lightbox)): ?>
 <div class="lightbox">
   <button class="lightbox__close">Close</button>
 
-  <button class="lightbox__next">Suivante</button>
-  <button class="lightbox__prev">Precedente</button>
+
+  <button class="lightbox__next">Suivant</button>
+  <button class="lightbox__prev">Précédent</button>
+
 
   <div class="lightbox__container">
-  <?php while($query->have_posts()) : ?>
-            <?php $query->the_post(); ?>
-                <?php get_template_part('templates_parts/photo_block' ); ?>
-        <?php endwhile; ?>
-        <?php wp_reset_postdata(); ?>
+    <?php while($query_lightbox->have_posts()) : ?>
+      <?php $query_lightbox->the_post(); ?>
+    <div class="thumbnail-lightbox" data-id="<?php echo get_the_ID (); ?>" >
+        <?php the_post_thumbnail("full"); ?>
+    </div>
+    <?php endwhile; ?>
+    <?php wp_reset_postdata(); ?>
   </div>
 </div>
+<?php endif; ?>
