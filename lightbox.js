@@ -7,16 +7,14 @@ function showLightbox(photo_id) {
     var lightbox = document.querySelector('.lightbox');
     lightbox.style.display = 'block';
     document.body.style.overflow = 'hidden';
-    var images = lightbox.querySelectorAll (".thumbnail-lightbox");
+    var images = lightbox.querySelectorAll(".thumbnail-lightbox");
     images.forEach(image => {
-        image.style.display="none";
-    })
-    var image = lightbox.querySelector(`.thumbnail-lightbox[data-id="${
-        photo_id
-    }"]`)
-    console.log ("photo_id", photo_id)
-    console.log ("image", image)
-    image.style.display="block";
+      image.style.display = "none";
+      image.classList.remove("active"); // Retirer la classe 'active' pour toutes les images
+    });
+    var image = lightbox.querySelector(`.thumbnail-lightbox[data-id="${photo_id}"]`)
+    image.style.display = "block";
+    image.classList.add("active"); // Ajouter la classe 'active' à l'image affichée
   }
   
 
@@ -29,57 +27,65 @@ function showLightbox(photo_id) {
   
   //pour afficher l'image suivante
   function showNextImage() {
-    var images = document.querySelectorAll('.lightbox__container img');
-    var currentIndex = 0;
-  
-    for (var i = 0; i < images.length; i++) {
-      if (images[i].classList.contains('active')) {
-        currentIndex = i;
-        break;
-      }
+    var activeImage = document.querySelector('.thumbnail-lightbox.active');
+    var nextImage = activeImage.nextElementSibling;
+    if (!nextImage) {
+      nextImage = document.querySelector('.thumbnail-lightbox:first-of-type');
     }
-  
-    images[currentIndex].classList.remove('active');
-  
-    if (currentIndex === images.length - 1) {
-      currentIndex = 0;
-    } else {
-      currentIndex++;
-    }
-  
-    images[currentIndex].classList.add('active');
+    activeImage.classList.remove('active');
+    nextImage.classList.add('active');
+    showLightbox(nextImage.dataset.id);
   }
+  
   
   //pour afficher l'image précédente
   function showPreviousImage() {
-    var images = document.querySelectorAll('.lightbox__container img');
-    var currentIndex = 0;
-  
-    for (var i = 0; i < images.length; i++) {
-      if (images[i].classList.contains('active')) {
-        currentIndex = i;
-        break;
-      }
+    var activeImage = document.querySelector('.thumbnail-lightbox.active');
+    var previousImage = activeImage.previousElementSibling;
+    if (!previousImage) {
+      previousImage = document.querySelector('.thumbnail-lightbox:last-of-type');
     }
-  
-    images[currentIndex].classList.remove('active');
-  
-    if (currentIndex === 0) {
-      currentIndex = images.length - 1;
-    } else {
-      currentIndex--;
-    }
-  
-    images[currentIndex].classList.add('active');
+    activeImage.classList.remove('active');
+    previousImage.classList.add('active');
+    showLightbox(previousImage.dataset.id);
   }
   
   // écouteur d'événement pour afficher la lightbox au clic d'une photo
-  var thumbnails = document.querySelectorAll('.thumbnail');
-  thumbnails.forEach(thumbnail => {
-    thumbnail.addEventListener('click', function() {
-        showLightbox(thumbnail.dataset.id);
-      });
-  })
+var thumbnails = document.querySelectorAll('.thumbnail');
+thumbnails.forEach(thumbnail => {
+  thumbnail.addEventListener('click', function(event) {
+    var photoId = thumbnail.dataset.id;
+    if (!event.target.classList.contains('thumbnail-hover__expand')) {
+      showLightbox(photoId);
+    }
+  });
+});
+
+// écouteur d'événement pour ouvrir la lightbox au clic sur l'icône d'agrandissement
+var expandIcons = document.querySelectorAll('.thumbnail-hover__expand');
+expandIcons.forEach(expandIcon => {
+  expandIcon.addEventListener('click', function(event) {
+    event.stopPropagation(); // Empêcher la propagation de l'événement aux éléments parents
+    var thumbnail = event.target.closest('.thumbnail');
+    var photoId = thumbnail.dataset.id;
+    showLightbox(photoId);
+  });
+});
+
+// écouteur d'événement pour ouvrir la page single_photo.php au clic sur l'icône de l'œil
+var eyeIcons = document.querySelectorAll('.thumbnail-hover__eye');
+eyeIcons.forEach(eyeIcon => {
+  eyeIcon.addEventListener('click', function(event) {
+    event.stopPropagation(); // Empêcher la propagation de l'événement aux éléments parents
+    var thumbnail = event.target.closest('.thumbnail');
+    var photoId = thumbnail.dataset.id;
+    var photoLink = thumbnail.querySelector('.thumbnail-hover__link').href;
+    if (!photoLink) {
+      // Si aucun lien n'est défini sur l'icône de l'œil, ouvrir la lightbox
+      showLightbox(photoId);
+    }
+  });
+});
   
   
   //écouteur d'événement pour masquer la lightbox au clic du bouton close

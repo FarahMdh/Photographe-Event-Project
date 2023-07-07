@@ -557,12 +557,12 @@ a {
 .lightbox__next {
     border: none;
     background: url(images/next_icon.png) center center / 107px 18px no-repeat;
-    width: 360px;
+    width: 212px;
     height: 100px;
     position: fixed;
     top: 0;
     right: 0;
-    margin-top: 30%;
+    margin-top: 25%;
     z-index: 11;
 }
 
@@ -570,13 +570,13 @@ a {
 .lightbox__prev {
     border: none;
     background: url(images/prev_icon.png) center center / 107px 18px no-repeat;
-    width: 220px;
+    width: 155px;
     height: 100px;
     position: fixed;
     top: 0;
     right: auto;
     left: 0;
-    margin-top: 30%;
+    margin-top: 25%;
     z-index: 11;
 }
 
@@ -587,8 +587,8 @@ a {
     border: none;
     background: url(images/close.png) center center / 100% 100% no-repeat;
     position: fixed;
-    top: 80px; 
-    right: 160px;
+    top: 44px; 
+    right: 104px;
     z-index: 12;
 }
 
@@ -616,3 +616,129 @@ a {
     margin-right: 50px;
     min-height: 100vh;
 }
+
+/* HOVER SUR LES PHOTOS */
+
+.thumbnail {
+    position: relative;
+    overflow: hidden;
+}
+  
+.thumbnail:hover {
+    filter: grayscale(60%); /* Ajoute un effet de grisage */
+}
+  
+.thumbnail img {
+    transition: filter 0.3s ease; /* Ajoute une transition fluide */
+}
+  
+.thumbnail:hover img {
+    filter: grayscale(0%); /* Annule l'effet de grisage au survol */
+}
+
+
+.thumbnail-hover__overlay img {
+    width: 45px;
+    height: 30px;
+
+}
+
+.thumbnail:hover .thumbnail-hover__overlay img {
+    width: 45px;
+    height: 30px;
+
+}
+  
+  
+  .thumbnail-hover {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+  }
+  
+  .thumbnail:hover .thumbnail-hover {
+    opacity: 1;
+    visibility: visible;
+  }
+  
+
+
+.thumbnail-hover__eye, 
+.thumbnail-hover__link {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+}
+
+.thumbnail-hover__expand img {
+    object-fit: contain;
+}
+  
+  .thumbnail-hover__expand {
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-start;
+    position: absolute;
+    top: 11px;
+    right: 18px;
+    width: 34px;
+    height: 34px;
+    cursor: pointer;
+  }
+  
+  .thumbnail-hover__ref {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-end;
+    position: absolute;
+    bottom: 12px;
+    left: 17px;
+    font-family: 'Poppins';
+    color: #FFF;
+    text-align: right;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: 1.4px;
+    text-transform: uppercase;
+  }
+  
+.thumbnail-hover__category {
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+    position: absolute;
+    bottom: 12px;
+    right: 23px;
+    font-family: 'Space_Mono';
+    color: #FFF;
+    text-align: right;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: 1.4px;
+    text-transform: uppercase;
+}
+
+.thumbnail .thumbnail-hover__category a {
+    color: #FFF;
+}
+
+.thumbnail:hover .thumbnail-hover__category a {
+    color: #FFF;
+}
+  
