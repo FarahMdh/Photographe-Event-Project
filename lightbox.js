@@ -15,6 +15,7 @@ function showLightbox(photo_id) {
     var image = lightbox.querySelector(`.thumbnail-lightbox[data-id="${photo_id}"]`)
     image.style.display = "block";
     image.classList.add("active"); // Ajouter la classe 'active' à l'image affichée
+
   }
   
 
@@ -50,24 +51,13 @@ function showLightbox(photo_id) {
     showLightbox(previousImage.dataset.id);
   }
   
-  // écouteur d'événement pour afficher la lightbox au clic d'une photo
-var thumbnails = document.querySelectorAll('.thumbnail');
-thumbnails.forEach(thumbnail => {
-  thumbnail.addEventListener('click', function(event) {
-    var photoId = thumbnail.dataset.id;
-    if (!event.target.classList.contains('thumbnail-hover__expand')) {
-      showLightbox(photoId);
-    }
-  });
-});
 
 // écouteur d'événement pour ouvrir la lightbox au clic sur l'icône d'agrandissement
 var expandIcons = document.querySelectorAll('.thumbnail-hover__expand');
 expandIcons.forEach(expandIcon => {
   expandIcon.addEventListener('click', function(event) {
     event.stopPropagation(); // Empêcher la propagation de l'événement aux éléments parents
-    var thumbnail = event.target.closest('.thumbnail');
-    var photoId = thumbnail.dataset.id;
+    var photoId = expandIcon.closest('.thumbnail').dataset.id;
     showLightbox(photoId);
   });
 });

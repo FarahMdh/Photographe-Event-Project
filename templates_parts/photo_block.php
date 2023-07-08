@@ -21,7 +21,7 @@
                 <span><?php echo get_post_meta(get_the_ID(), 'reference', true); ?></span>
             </div>
 
-            <div class="thumbnail-hover__category">
+            <div class="thumbnail-hover__category disable-link">
                 <span><?php echo get_the_term_list(get_the_ID(), 'categorie', '', ', '); ?></span>
             </div>
         </div>

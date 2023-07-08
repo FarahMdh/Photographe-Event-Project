@@ -59,3 +59,30 @@ function toggleModal(event) {
   }
 });
 
+// changement du menu burger en croix au clic et animation des titres du menu  
+const burger = document.querySelector('.burger');
+const titlesNav = document.querySelectorAll('.menu li ');
+
+burger.addEventListener('click', () => {
+    burger.classList.toggle('active');             // ajout de la class active au clic de la div Burger
+    
+      if (burger.classList.contains('active')) {     
+        setTimeout(() => {
+          titlesNav.forEach(title => {               // parcourt tous les titres du menu nav
+            title.classList.add('animated');        // ajout de la class animated à chaque titre
+          });
+        }, "500");                                // l'animation des titres est réalisée après 0,5 seconde
+    } else {
+      titlesNav.forEach(title => {               
+          title.classList.remove('animated');    
+      });
+    }
+  });
+
+
+// pour que le burger affiche le menu au clic 
+document.querySelector('.menu-toggle').addEventListener('click', function() {
+  document.querySelector('.menu').classList.toggle('is-active');
+  console.log('is-active')
+}); 
+
