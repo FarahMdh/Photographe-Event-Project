@@ -63,8 +63,6 @@ Tags: photo, Photographe Event Project
 
 }
 
-
-
 body {
     background-color: #FFFFFF;
     font-family: 'Space_Mono';
@@ -101,7 +99,6 @@ body {
 .main-menu {
     display: flex;
     list-style: none;
-    
 }
 
 a {
@@ -117,7 +114,6 @@ a {
     padding: 10px; 
     border-top: 1px solid black; 
 }
-
 
 .footer-navigation {
     display: flex;
@@ -627,7 +623,7 @@ a {
 }
 
 .lightbox__container img {
-    max-width: 100%;
+    max-width: 100vh;
     height: auto;
 }
 
@@ -647,15 +643,12 @@ a {
     overflow: hidden;
 }
   
-.thumbnail:hover {
+.thumbnail.is-hovered {
     filter: grayscale(60%); /* Ajoute un effet de grisage */
 }
   
-.thumbnail img {
-    transition: filter 0.3s ease; /* Ajoute une transition fluide */
-}
   
-.thumbnail:hover img {
+.thumbnail.is-hovered img {
     filter: grayscale(0%); /* Annule l'effet de grisage au survol */
 }
 
@@ -663,17 +656,10 @@ a {
 .thumbnail-hover__overlay img {
     width: 45px;
     height: 30px;
-
 }
 
-.thumbnail:hover .thumbnail-hover__overlay img {
-    width: 45px;
-    height: 30px;
 
-}
-  
-  
-  .thumbnail-hover {
+.thumbnail-hover {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -686,14 +672,12 @@ a {
     opacity: 0;
     visibility: hidden;
     transition: opacity 0.3s ease, visibility 0.3s ease;
-  }
+}
   
-  .thumbnail:hover .thumbnail-hover {
+.thumbnail.is-hovered .thumbnail-hover {
     opacity: 1;
     visibility: visible;
-  }
-  
-
+}
 
 .thumbnail-hover__eye, 
 .thumbnail-hover__link {
@@ -709,7 +693,7 @@ a {
     object-fit: contain;
 }
   
-  .thumbnail-hover__expand {
+.thumbnail-hover__expand {
     display: flex;
     justify-content: flex-end;
     align-items: flex-start;
@@ -719,9 +703,9 @@ a {
     width: 34px;
     height: 34px;
     cursor: pointer;
-  }
+}
   
-  .thumbnail-hover__ref {
+.thumbnail-hover__ref {
     display: flex;
     justify-content: flex-start;
     align-items: flex-end;
@@ -737,7 +721,7 @@ a {
     line-height: normal;
     letter-spacing: 1.4px;
     text-transform: uppercase;
-  }
+}
   
 .thumbnail-hover__category {
     display: flex;
@@ -850,8 +834,24 @@ a {
     
     .lightbox__next, 
     .lightbox__prev {
-        width: 225px;
-        height: 852px;
+        width: 120px;
+        height: 684px;   
+    }
+
+    .lightbox__container img {
+        max-width: 50vh;
+        height: auto;
+    }
+
+    .thumbnail-hover__expand img {
+        width: 34px;
+        height: 34px;
+    }
+    
+    .thumbnail-hover__eye img {
+        width: 46px;
+        height: 30px;
+        object-fit: contain;
     }
     
     /* SINGLE POST */
@@ -1065,9 +1065,17 @@ a {
 .thumbnail-container {
     display: grid;
     grid-template-columns: repeat(1, 2fr);
-    margin: 11px 18px;
-    grid-gap: 20px;
-    object-fit: cover;
+}
+
+.thumbnail-hover__expand img {
+    width: 34px;
+    height: 34px;
+}
+
+.thumbnail-hover__eye img {
+    width: 46px;
+    height: 30px;
+    object-fit: contain;
 }
 
 /* FOOTER */
@@ -1084,14 +1092,20 @@ a {
 }
 
 /* LIGHTBOX */
+
+.lightbox__container img {
+    max-width: 40vh;
+    height: auto;
+}
+
 .lightbox__close {
-    top: 81px;
+    top: 67px;
     right: 57px;
 }
 
 .lightbox__next, 
 .lightbox__prev {
-    height : 156px;
+    height : 50px;
 }
 
 /* SINGLE-POST */ 

@@ -1,5 +1,3 @@
-console.log ("ça fonctionne")
-
 document.addEventListener("DOMContentLoaded", function() {
 // apparition / disparition de la modale de contact au clic de Contacter
 const modalContainer = document.querySelector(".modal-container");
