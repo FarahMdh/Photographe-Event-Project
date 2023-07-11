@@ -1,25 +1,34 @@
-<?php
-/**
- * The template for displaying all single posts
- *
- * @link https://developer.wordpress.org/themes/basics/template-hierarchy/#single-post
- *
- * @package WordPress
- * @subpackage Twenty_Twenty_One
- * @since Twenty Twenty-One 1.0
- */
+<?php get_header(); ?>
 
-get_header();
+<div class="single-post-container">
 
-/* Start the Loop */
-while ( have_posts() ) :
-	the_post();
-	get_template_part( 'template-parts/content/content-page' );
+    <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 
-	// If comments are open or there is at least one comment, load up the comment template.
-	if ( comments_open() || get_comments_number() ) {
-		comments_template();
-	}
-endwhile; // End of the loop.
+        <div class="post-content">
 
-get_footer();
+            <!-- Display the Title -->
+            <h1 class="post-title"><?php the_title(); ?></h1>
+
+            <!-- Display the Featured Image -->
+            <?php if (has_post_thumbnail()) : ?>
+                <div class="post-thumbnail">
+                    <?php the_post_thumbnail(); ?>
+                </div>
+            <?php endif; ?>
+
+            <!-- Display the Content -->
+            <div class="post-text">
+                <?php the_content(); ?>
+            </div>
+
+        </div>
+
+    <?php endwhile; else: ?>
+
+        <p><?php _e('Sorry, this page does not exist.'); ?></p>
+
+    <?php endif; ?>
+
+</div>
+
+<?php get_footer(); ?>

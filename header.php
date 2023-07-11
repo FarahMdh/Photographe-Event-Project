@@ -20,20 +20,21 @@
 
             <nav class="site-navigation">
 
-            <button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false">
-                <div class="burger">
-                    <span class="line"></span>
-                </div>
-            </button>
-            
-            <ul class="menu">
-                <?php
-                wp_nav_menu(array(
-                    'theme_location' => 'primary',
-                    'menu_class' => 'main-menu',
-                 ));
-                ?>
-            </ul>
+                <button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false">
+                    <div class="burger">
+                        <span class="line"></span>
+                    </div>
+                </button>
+                
+                <ul class="menu">
+                    <?php
+                    wp_nav_menu(array(
+                        'theme_location' => 'primary',
+                        'menu_class' => 'main-menu',
+                    ));
+                    ?>
+                </ul>
             </nav>
+
         </div>
     </header>

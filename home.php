@@ -1,4 +1,5 @@
 <?php get_header(); ?>
+<main class="main-body">
 
 <?php
 $random_image_args = array(                 // pour obtenir une image aléatoire du catalogue dans le header
@@ -120,7 +121,10 @@ $query_lightbox = $query;
     </div>
 
 </div>
-    
 
+</main>
+
+<div class="footer-test">
 <?php get_footer(); ?> 
+</div>
 

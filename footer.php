@@ -2,8 +2,8 @@
 <?php get_template_part('templates_parts/lightbox'); ?>
 
 <?php wp_footer(); ?>
-</body>
-</html>
+
+
 <footer class="site-footer">
     <div class="container-footer">
         <nav class="footer-navigation">
@@ -16,3 +16,5 @@
         </nav>
     </div>
 </footer>
+</body>
+</html>

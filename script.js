@@ -59,30 +59,36 @@ function toggleModal(event) {
   }
 });
 
-// changement du menu burger en croix au clic et animation des titres du menu  
+
+// pour afficher le menu au clic du burger 
+
 const burger = document.querySelector('.burger');
-const titlesNav = document.querySelectorAll('.menu li ');
+const menu = document.querySelector('.menu');
+const main = document.querySelector('.main-body');
+const footer = document.querySelector('.footer-test');
 
 burger.addEventListener('click', () => {
-    burger.classList.toggle('active');             // ajout de la class active au clic de la div Burger
-    
-      if (burger.classList.contains('active')) {     
-        setTimeout(() => {
-          titlesNav.forEach(title => {               // parcourt tous les titres du menu nav
-            title.classList.add('animated');        // ajout de la class animated à chaque titre
-          });
-        }, "500");                                // l'animation des titres est réalisée après 0,5 seconde
-    } else {
-      titlesNav.forEach(title => {               
-          title.classList.remove('animated');    
-      });
-    }
+    burger.classList.toggle('active');                         // ajout de la classe active au burger
+    menu.classList.toggle('is-active');                         //affichage du menu au clic du burger     
+    main.classList.toggle('fixed');
+    footer.classList.toggle('fixed');                   
+});
+
+
+// pour que le menu soit caché au clic des titres 
+const navLinks = document.querySelectorAll('.menu li');
+
+navLinks.forEach(link => {
+  link.addEventListener('click', () => {
+    document.querySelector('.menu').classList.remove('is-active');
+    burger.classList.remove('active');
+    main.classList.remove('fixed');
+    footer.classList.remove('fixed');
+    titlesNav.forEach(title => {
+      title.classList.remove('animated');
+
+    });
   });
+});
 
-
-// pour que le burger affiche le menu au clic 
-document.querySelector('.menu-toggle').addEventListener('click', function() {
-  document.querySelector('.menu').classList.toggle('is-active');
-  console.log('is-active')
-}); 
 
